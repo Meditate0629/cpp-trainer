@@ -41,7 +41,7 @@ git clone <这个仓库的地址> 题库
 | 需要的 | 怎么装 |
 |---|---|
 | **Python 3.8+** | [python.org](https://www.python.org/downloads/) 下载安装，装的时候**勾上 "Add python.exe to PATH"** |
-| **C++ 编译器** | Windows：装 [w64devkit](https://github.com/skeeto/w64devkit/releases)（解压即用，把那两个 `bin` 目录加进 PATH）；<br>或者直接跑 `python 工具/下载编译器.py` 让它帮你下；<br>Linux / macOS：`sudo apt install g++` / `xcode-select --install` |
+| **C++ 编译器** | Windows：装 [w64devkit](https://github.com/skeeto/w64devkit/releases)（解压即用，把它的 `bin` 目录加进 PATH）；<br>懒得自己找就用 `python 工具/下载编译器.py` 帮你下（只下载，解压和加 PATH 得自己来）；<br>Linux / macOS：`sudo apt install g++` / `xcode-select --install` |
 
 > 只要 Python 不要 C++ 也能用 —— 那样就只能做 Python 判题，C++ 题会全部报「编译失败」。
 
@@ -114,7 +114,7 @@ VS Code 打开 `题库` 文件夹 → 打开某道题的 `.cpp` → 按 `F5`。
 │   ├── 自检环境.py                环境体检 + 编译运行自测
 │   ├── 自检网站.py                改过网站代码后跑一遍判题/落盘/进度回写
 │   ├── 生成练习.py                模板或样例被删坏了可以重建
-│   └── 下载编译器.py              Windows 上一键下 w64devkit
+│   └── 下载编译器.py              Windows 上一键下 w64devkit（只下载，解压自己来）
 ├── .vscode\                      VS Code 编译 / 运行 / 调试
 └── 阶段0_从这里开始.md            详细上手说明 + 排错表
 ```
