@@ -21,7 +21,7 @@
 | 一份进度表 | `进度追踪表.csv`，Excel 直接打开，通过自动打勾 |
 
 题面和参考答案来自公开题库
-[IntroductionToComputationHomework2022](https://github.com/z-hz/IntroductionToComputationHomework2022)（MIT），
+[IntroductionToComputationHomework2022](https://github.com/LC-John/IntroductionToComputationHomework2022)（MIT），
 我做了抽取、校正、模板化，以及这个刷题网站。**只用来学 C++，不要拿去做别的事。**
 
 ---
@@ -152,7 +152,7 @@ VS Code 打开 `题库` 文件夹 → 打开某道题的 `.cpp` → 按 `F5`。
 ## 许可
 
 - 本站代码（`训练网站/`、`工具/`、模板生成等）：**MIT**，见 [LICENSE](LICENSE)
-- 题目与参考答案：来自 [IntroductionToComputationHomework2022](https://github.com/z-hz/IntroductionToComputationHomework2022)，
+- 题目与参考答案：来自 [IntroductionToComputationHomework2022](https://github.com/LC-John/IntroductionToComputationHomework2022)，
   **MIT**，© 2022 Zhang Huangzhao，见 [THIRD-PARTY.md](THIRD-PARTY.md)
 
 > ⚠️ 判题功能 = 收到代码就编译并运行它，这是刷题工具的本分。

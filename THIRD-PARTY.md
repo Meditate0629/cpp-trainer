@@ -6,7 +6,7 @@
 `测试数据/` 里的样例（以及由它们派生的 `进度追踪表.模板.csv` 题目清单）
 都来自：
 
-- **仓库**：https://github.com/z-hz/IntroductionToComputationHomework2022
+- **仓库**：https://github.com/LC-John/IntroductionToComputationHomework2022
 - **作者**：Zhang Huangzhao
 - **许可**：MIT License, Copyright (c) 2022 Zhang Huangzhao
 
