@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>计算概论 · 训练场</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="brand">
+    <span class="logo">&lt;/&gt;</span>
+    <span class="brand-text">计算概论 · 训练场</span>
+  </div>
+
+  <div class="search">
+    <input id="search" type="text" placeholder="搜索题号 / 题目 / 关键词…" autocomplete="off">
+  </div>
+
+  <select id="stageFilter" class="sel" title="按阶段筛选">
+    <option value="ALL">全部阶段</option>
+  </select>
+
+  <select id="statusFilter" class="sel" title="按状态筛选">
+    <option value="ALL">全部状态</option>
+    <option value="TODO">未通过</option>
+    <option value="DONE">已通过</option>
+  </select>
+
+  <div class="grow"></div>
+
+  <div class="chip" id="progressChip" title="已通过 / 总题数">0 / 250</div>
+  <button class="icon-btn" id="themeBtn" title="切换深色 / 浅色">◐</button>
+</header>
+
+<main class="layout" id="layout">
+
+  <aside class="panel col-list">
+    <div class="list-head">
+      <span id="listCount">250 题</span>
+      <button class="mini" id="toggleList" title="收起 / 展开题目列表">«</button>
+    </div>
+    <div class="list-scroll" id="problemList"></div>
+  </aside>
+
+  <section class="panel col-desc">
+    <div class="desc-scroll" id="descPane">
+      <div class="empty-hint">← 从左边选一道题开始</div>
+    </div>
+  </section>
+
+  <section class="panel col-work">
+    <div class="work-head">
+      <select id="langSel" class="sel">
+        <option value="cpp">C++ 17</option>
+        <option value="python">Python 3</option>
+      </select>
+      <button class="mini" id="reloadBtn" title="从磁盘重新读取（在 VS Code 里改过之后点一下）">↻ 重读</button>
+      <button class="mini" id="resetBtn" title="恢复成空白骨架">重置</button>
+      <button class="mini" id="refBtn" title="查看参考解（先自己卡 40 分钟）">参考解</button>
+      <div class="grow"></div>
+      <span class="hint-key">Ctrl+Enter 运行 · Ctrl+Shift+Enter 提交</span>
+    </div>
+
+    <div class="editor-wrap">
+      <div class="gutter" id="gutter">1</div>
+      <textarea id="editor" spellcheck="false" autocomplete="off" autocapitalize="off"
+                wrap="off" placeholder="在这里写代码…"></textarea>
+    </div>
+
+    <div class="work-foot">
+      <button class="btn btn-ghost" id="runBtn">运行 ▶</button>
+      <button class="btn btn-primary" id="submitBtn">提交</button>
+      <div class="grow"></div>
+      <span class="foot-stat" id="footStat"></span>
+    </div>
+
+    <div class="console">
+      <div class="tabs">
+        <button class="tab active" data-tab="cases">测试用例</button>
+        <button class="tab" data-tab="result">运行 / 判题结果</button>
+        <button class="tab" data-tab="history">提交记录</button>
+      </div>
+      <div class="console-body">
+        <div class="pane active" id="paneCases">
+          <div class="case-pick" id="casePick"></div>
+          <label class="lab">自定义输入（可以用参考解对照任意数据）</label>
+          <textarea id="customInput" class="io-box" spellcheck="false"
+                    placeholder="在这里输入测试数据…"></textarea>
+          <div class="row">
+            <button class="btn btn-ghost sm" id="runCustomBtn">用这组数据运行</button>
+            <label class="chk"><input type="checkbox" id="withRef" checked> 同时跑参考解并对比</label>
+          </div>
+        </div>
+        <div class="pane" id="paneResult">
+          <div class="empty-hint sm">还没有运行结果。写好后点「运行」或「提交」。</div>
+        </div>
+        <div class="pane" id="paneHistory">
+          <div class="empty-hint sm">还没有提交记录。</div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div class="modal hidden" id="modal">
+  <div class="modal-box">
+    <div class="modal-head">
+      <span id="modalTitle">参考解</span>
+      <button class="icon-btn" id="modalClose">✕</button>
+    </div>
+    <div class="modal-body" id="modalBody"></div>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

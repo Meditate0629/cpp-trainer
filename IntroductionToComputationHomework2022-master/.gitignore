@@ -1,0 +1,13 @@
+# Compilation & Executable
+*.exe
+*.o
+
+# Test cases
+*.in
+*.out
+
+# Excel tables
+*.xls
+*.xlsx
+*.docx
+*.pdf

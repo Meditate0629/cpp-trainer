@@ -1,0 +1,25 @@
+# ---- 运行时产物（每个人自己的，不进仓库）----
+进度追踪表.csv
+训练网站/备份/
+训练网站/运行/
+训练网站/提交记录.jsonl
+提交记录.jsonl
+练习/**/*.exe
+练习/**/*.out.exe
+练习/**/*.o
+工具/_dl/
+工具/_chk.txt
+
+# ---- Python ----
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# ---- 编辑器 / 系统 ----
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+desktop.ini
+*.log

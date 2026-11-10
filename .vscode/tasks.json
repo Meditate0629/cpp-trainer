@@ -1,0 +1,63 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "build",
+      "type": "shell",
+      "command": "g++",
+      "args": [
+        "-std=c++17",
+        "-g",
+        "-Wall",
+        "-O2",
+        "${file}",
+        "-o",
+        "${fileDirname}\\${fileBasenameNoExtension}.exe"
+      ],
+      "group": { "kind": "build", "isDefault": true },
+      "problemMatcher": ["$gcc"],
+      "presentation": { "reveal": "silent", "clear": true },
+      "detail": "编译当前打开的 .cpp（Ctrl+Shift+B）"
+    },
+    {
+      "label": "build -O0 便于调试",
+      "type": "shell",
+      "command": "g++",
+      "args": [
+        "-std=c++17",
+        "-g",
+        "-Wall",
+        "-O0",
+        "${file}",
+        "-o",
+        "${fileDirname}\\${fileBasenameNoExtension}.exe"
+      ],
+      "problemMatcher": ["$gcc"],
+      "presentation": { "reveal": "silent", "clear": true },
+      "detail": "不优化，断点单步更准"
+    },
+    {
+      "label": "run",
+      "type": "shell",
+      "command": "${fileDirname}\\${fileBasenameNoExtension}.exe",
+      "dependsOn": ["build"],
+      "group": { "kind": "test", "isDefault": true },
+      "options": { "cwd": "${fileDirname}" },
+      "presentation": { "reveal": "always", "clear": true },
+      "detail": "编译并运行当前文件（在终端里手动输入数据）"
+    },
+    {
+      "label": "run with sample",
+      "type": "shell",
+      "command": "cmd.exe",
+      "args": [
+        "/c",
+        "chcp 65001 >nul && \"${fileDirname}\\${fileBasenameNoExtension}.exe\" < \"${workspaceFolder}\\测试数据\\${fileBasenameNoExtension}.in\""
+      ],
+      "dependsOn": ["build"],
+      "options": { "cwd": "${workspaceFolder}" },
+      "presentation": { "reveal": "always", "clear": true },
+      "detail": "用 测试数据\\<文件名>.in 当输入跑一遍，看看输出长什么样"
+    }
+  ]
+}
